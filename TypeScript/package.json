@@ -5,6 +5,7 @@
   "main": "main.ts",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watch",
     "main": "npx tsc | node build/main.js"
   },
   "repository": {
