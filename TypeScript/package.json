@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/mamaevdev/coding-dojo#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.4.4"
   }
 }
