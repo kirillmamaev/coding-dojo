@@ -1,0 +1,23 @@
+{
+  "name": "typescript-dojo",
+  "version": "1.0.0",
+  "description": "TypeScript dojo",
+  "main": "main.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamaevdev/coding-dojo.git"
+  },
+  "author": "Kirill Mamaev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mamaevdev/coding-dojo/issues"
+  },
+  "homepage": "https://github.com/mamaevdev/coding-dojo#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "typescript": "^5.4.4"
+  }
+}
