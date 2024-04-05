@@ -4,7 +4,8 @@
   "description": "TypeScript dojo",
   "main": "main.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "main": "npx tsc | node build/main.js"
   },
   "repository": {
     "type": "git",

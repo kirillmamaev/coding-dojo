@@ -1,9 +1,9 @@
-import { main } from './main';
+import { Main } from './main';
 
-describe('main', () => {
+describe('Main', () => {
   it('should log the correct message', () => {
     const consoleSpy = jest.spyOn(console, 'log');
-    main();
+    new Main();
     expect(consoleSpy).toHaveBeenCalledWith('This is main.ts file in TypeScript dojo!');
     consoleSpy.mockRestore();
   });
