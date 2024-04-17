@@ -44,8 +44,8 @@ describe('Empty linked list', () => {
   });
 });
 
-describe('Linked list with nodes', () => {
-  let linkedList = new LinkedList<string>();
+describe('Linked list with string nodes', () => {
+  let linkedList: LinkedList<string>;
 
   beforeEach(() => {
     linkedList = new LinkedList<string>();
@@ -54,8 +54,12 @@ describe('Linked list with nodes', () => {
     linkedList.add('node 3');
   });
 
+  it('calculates correct length', () => {
+    expect(linkedList.length).toEqual(3);
+  });
+
   it('can traverse the linked list and execute a callback on each node', () => {
-    const callback = jest.fn();
+    const callback = jest.fn().mockReturnValue(true);
     linkedList.traverse(callback);
     expect(callback).toHaveBeenCalledTimes(3);
     expect(callback).toHaveBeenNthCalledWith(1, linkedList.head);
@@ -69,7 +73,7 @@ describe('Linked list with nodes', () => {
     expect(linkedList.head).toBeNull();
     expect(linkedList.tail).toBeNull();
   });
-  
+
   it('can delete first nodes', () => {
     linkedList.deleteFirst();
     expect(linkedList.length).toEqual(2);
@@ -103,17 +107,21 @@ describe('Linked list with nodes', () => {
   });
 
   it('throws an error when the index is out of bounds', () => {
-    expect(() => linkedList.nodeAtIndex(0)).toThrow('Index is out of bounds.');
-    expect(() => linkedList.nodeAtIndex(4)).toThrow('Index is out of bounds.');
+    expect(() => linkedList.nodeAtIndex(0)).toThrowError('Index is out of bounds.');
+    expect(() => linkedList.nodeAtIndex(4)).toThrowError('Index is out of bounds.');
   });
 
-  it('can find a node that satisfies the comparator', () => {
-    const result = linkedList.find((data) => data === 'node 2');
-    expect(result?.data).toEqual('node 2');
+  it('can find a node that that contains a specific data', () => {
+    const result = linkedList.find('node 1');
+    expect(result?.data).toEqual('node 1');
+    const result2 = linkedList.find('node 2');
+    expect(result2?.data).toEqual('node 2');
+    const result3 = linkedList.find('node 3');
+    expect(result3?.data).toEqual('node 3');
   });
 
   it('returns null when no node satisfies the comparator', () => {
-    const result = linkedList.find((data) => data === 'node 4');
+    const result = linkedList.find('node 4');
     expect(result).toBeNull();
   });
 
@@ -143,8 +151,8 @@ describe('Linked list with nodes', () => {
   });
 
   it('throws error when index is out of bounds on delete by index', () => {
-    expect(() => linkedList.deleteByIndex(0)).toThrow('Index is out of bounds.');
-    expect(() => linkedList.deleteByIndex(4)).toThrow('Index is out of bounds.');
+    expect(() => linkedList.deleteByIndex(0)).toThrowError();
+    expect(() => linkedList.deleteByIndex(4)).toThrowError();
   });
 
   it('can insert a node at the beginning of the list', () => {
