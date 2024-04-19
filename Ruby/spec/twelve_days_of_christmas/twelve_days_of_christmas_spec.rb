@@ -70,7 +70,7 @@ module TwelveDaysOfChristmas
     end
 
     it "returns the Twelve English verses of the song" do
-      expect(described_class.new(locale: :en).verse(12)).to eq(
+      expect(described_class.new.verse(12)).to eq(
         "On the twelfth day of Christmas\n" \
         "My true love gave to me:\n" \
         "Twelve drummers drumming,\n" \

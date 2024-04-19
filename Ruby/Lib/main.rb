@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Main
-  def print_message
-    'This is main.rb file in Ruby dojo!'
+  def self.print_message
+    "This is main.rb file in Ruby dojo!"
   end
 end

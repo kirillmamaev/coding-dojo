@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|coding_dojo| "https://github.com/mamaevdev/coding-dojo" }
+git_source(:github) { |_coding_dojo| "https://github.com/mamaevdev/coding-dojo" }
 
-gem "rspec"
+gem "rspec", "~> 3.13"
+gem "rubocop-rspec", "~> 2.29"
+gem "standard", "~> 1.35"
