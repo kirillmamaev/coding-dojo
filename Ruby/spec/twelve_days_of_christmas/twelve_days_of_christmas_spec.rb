@@ -2,14 +2,15 @@
 
 require "spec_helper"
 require "twelve_days_of_christmas/twelve_days_of_christmas"
+require 'twelve_days_of_christmas/dictionary'
 
 module TwelveDaysOfChristmas
-  RSpec.describe TwelveDaysOfChristmas do
+  RSpec.describe SongGenerator do
     it "returns the first verse of the english song" do
       expect(described_class.new.verse(1)).to eq(
         "On the first day of Christmas\n" \
         "My true love gave to me:\n" \
-        "A partridge in a pear tree."
+        "A partridge in a pear tree.\n"
       )
     end
 
@@ -17,7 +18,7 @@ module TwelveDaysOfChristmas
       expect(described_class.new(locale: :en_au).verse(1)).to eq(
         "On the first day of Christmas\n" \
         "My true love gave to me:\n" \
-        "A kookaburra in a gum tree."
+        "A kookaburra in a gum tree.\n"
       )
     end
 
@@ -26,7 +27,7 @@ module TwelveDaysOfChristmas
         "On the second day of Christmas\n" \
         "My true love gave to me:\n" \
         "Two turtle doves,\n" \
-        "And a partridge in a pear tree."
+        "And a partridge in a pear tree.\n"
       )
     end
 
@@ -36,7 +37,7 @@ module TwelveDaysOfChristmas
         "My true love gave to me:\n" \
         "Three french hens,\n" \
         "Two turtle doves,\n" \
-        "And a partridge in a pear tree."
+        "And a partridge in a pear tree.\n"
       )
     end
 
@@ -46,7 +47,7 @@ module TwelveDaysOfChristmas
         "My true love gave to me:\n" \
         "Three wet galahs,\n" \
         "Two snakes on skis,\n" \
-        "And a kookaburra in a gum tree."
+        "And a kookaburra in a gum tree.\n"
       )
     end
 
@@ -65,7 +66,7 @@ module TwelveDaysOfChristmas
         "Four lyrebirds,\n" \
         "Three wet galahs,\n" \
         "Two snakes on skis,\n" \
-        "And a kookaburra in a gum tree."
+        "And a kookaburra in a gum tree.\n"
       )
     end
 
@@ -84,7 +85,7 @@ module TwelveDaysOfChristmas
         "Four calling birds,\n" \
         "Three french hens,\n" \
         "Two turtle doves,\n" \
-        "And a partridge in a pear tree." \
+        "And a partridge in a pear tree.\n" \
       )
     end
 
