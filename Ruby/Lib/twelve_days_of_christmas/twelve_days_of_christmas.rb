@@ -86,7 +86,7 @@ module TwelveDaysOfChristmas
     def song
       output = ''
       (1..12).each do |i|
-        output += verse(i) + "\n\n"
+        output += verse(i) + ((i == 12) ? "\n" : "\n\n")
       end
       output
     end

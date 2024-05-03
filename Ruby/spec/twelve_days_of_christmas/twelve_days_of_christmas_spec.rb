@@ -204,7 +204,6 @@ module TwelveDaysOfChristmas
         Three french hens,
         Two turtle doves,
         And a partridge in a pear tree.
-
         EO_SONG
       )
     end
@@ -325,7 +324,6 @@ module TwelveDaysOfChristmas
         Three wet galahs,
         Two snakes on skis,
         And a kookaburra in a gum tree.
-
         EO_SONG
       )
     end
