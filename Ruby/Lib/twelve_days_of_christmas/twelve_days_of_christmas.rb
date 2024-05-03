@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'twelve_days_of_christmas/dictionary'
+require "twelve_days_of_christmas/dictionary"
 
 module TwelveDaysOfChristmas
   class SongGenerator
     FIRST_DAY = 1
     SECOND_DAY = 2
     LAST_DAY = 12
-    COMMA =","
+    COMMA = ","
     DOT = "."
     EOL = "\n"
 
@@ -19,8 +19,8 @@ module TwelveDaysOfChristmas
 
     def song
       (FIRST_DAY..LAST_DAY).map do |day|
-        "#{verse(day)}" +
-        "#{((day == LAST_DAY) ? "" : "#{EOL}")}"
+        "#{verse(day)}" \
+        "#{(day == LAST_DAY) ? "" : EOL}"
       end.join
     end
 
@@ -34,14 +34,14 @@ module TwelveDaysOfChristmas
       end
 
       output + "#{capitalize(
-          "#{DICTIONARY[locale][:conjunction]} #{DICTIONARY[locale][:gifts][FIRST_DAY]}"
-        )}#{DOT}#{EOL}"
+        "#{DICTIONARY[locale][:conjunction]} #{DICTIONARY[locale][:gifts][FIRST_DAY]}"
+      )}#{DOT}#{EOL}"
     end
 
     private
 
     def capitalize(string)
-      "#{string[0].upcase}#{string[1..-1]}"
+      "#{string[0].upcase}#{string[1..]}"
     end
   end
 end
