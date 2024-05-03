@@ -30,9 +30,9 @@ demo:
 .PHONY: demo-twelve_days
 demo-twelve_days:
 	@ruby -I lib -e 'require "twelve_days_of_christmas/twelve_days_of_christmas"; \
-		puts "🇬🇧\n" + TwelveDaysOfChristmas::TwelveDaysOfChristmas.new.verse(12)'
+		puts "🇬🇧\n" + TwelveDaysOfChristmas::TwelveDaysOfChristmas.new.song'
 	ruby -I lib -e 'require "twelve_days_of_christmas/twelve_days_of_christmas"; \
-		puts "🦘\n" + TwelveDaysOfChristmas::TwelveDaysOfChristmas.new(locale: :en_au).verse(12)'
+		puts "🦘\n" + TwelveDaysOfChristmas::TwelveDaysOfChristmas.new(locale: :en_au).song'
 
 .PHONY: usage
 usage:
