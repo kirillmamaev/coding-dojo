@@ -6,10 +6,19 @@ module TwelveDaysOfChristmas
   class SongGenerator
     FIRST_DAY = 1
     LAST_DAY = 12
+    COMMA =","
+    DOT = "."
     EOL = "\n"
 
     def initialize(locale: :en)
       @locale = locale
+    end
+
+    def song
+      (FIRST_DAY..LAST_DAY).map do |day|
+        "#{verse(day)}" +
+        "#{((day == LAST_DAY) ? "" : "#{EOL}")}"
+      end.join
     end
 
     def verse(day_number)
@@ -17,21 +26,13 @@ module TwelveDaysOfChristmas
       output += capitalize("#{DICTIONARY[@locale][:present_giver_line]}#{EOL}")
 
       day_number.downto(2) do |gift_number|
-        output += capitalize("#{DICTIONARY[@locale][:gifts][gift_number]},#{EOL}")
+        output += capitalize("#{DICTIONARY[@locale][:gifts][gift_number]}#{COMMA}#{EOL}")
       end
 
       output += capitalize(
         ((day_number == 1) ? "" : "#{DICTIONARY[@locale][:conjunction]} ") +
-        "#{DICTIONARY[@locale][:gifts][1]}.#{EOL}"
+        "#{DICTIONARY[@locale][:gifts][1]}#{DOT}#{EOL}"
       )
-    end
-
-    def song
-      output = ''
-      (1..12).each do |i|
-        output += "#{verse(i)}#{((i == 12) ? "" : "#{EOL}")}"
-      end
-      output
     end
 
     private
