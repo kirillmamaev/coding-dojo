@@ -5,7 +5,7 @@ require "twelve_days_of_christmas/twelve_days_of_christmas"
 
 module TwelveDaysOfChristmas
   RSpec.describe TwelveDaysOfChristmas do
-    it "returns the first verse of the English song" do
+    it "returns the first verse of the english song" do
       expect(described_class.new.verse(1)).to eq(
         "On the first day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -13,7 +13,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the first verse of the Aussie song" do
+    it "returns the first verse of the aussie song" do
       expect(described_class.new(locale: :en_au).verse(1)).to eq(
         "On the first day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -21,7 +21,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the second verse of the English song" do
+    it "returns the second verse of the english song" do
       expect(described_class.new.verse(2)).to eq(
         "On the second day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -30,7 +30,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the third verse of the English song" do
+    it "returns the third verse of the english song" do
       expect(described_class.new.verse(3)).to eq(
         "On the third day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -40,7 +40,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the third verse of the Aussie song" do
+    it "returns the third verse of the aussie song" do
       expect(described_class.new(locale: :en_au).verse(3)).to eq(
         "On the third day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -50,7 +50,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the twelves verse of the Aussie song" do
+    it "returns the twelves verse of the aussie song" do
       expect(described_class.new(locale: :en_au).verse(12)).to eq(
         "On the twelfth day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -69,7 +69,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the twelves verse of the English song" do
+    it "returns the twelves verse of the english song" do
       expect(described_class.new(locale: :en).verse(12)).to eq(
         "On the twelfth day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -204,6 +204,127 @@ module TwelveDaysOfChristmas
         Three french hens,
         Two turtle doves,
         And a partridge in a pear tree.
+
+        EO_SONG
+      )
+    end
+
+    it "returns the whole classic aussie song" do
+      expect(described_class.new(locale: :en_au).song).to eq(
+        <<~EO_SONG
+        On the first day of Christmas
+        My true love gave to me:
+        A kookaburra in a gum tree.
+
+        On the second day of Christmas
+        My true love gave to me:
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the third day of Christmas
+        My true love gave to me:
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the fourth day of Christmas
+        My true love gave to me:
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the fifth day of Christmas
+        My true love gave to me:
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the sixth day of Christmas
+        My true love gave to me:
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the seventh day of Christmas
+        My true love gave to me:
+        Seven emus laying,
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the eighth day of Christmas
+        My true love gave to me:
+        Eight dingoes dancing,
+        Seven emus laying,
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the ninth day of Christmas
+        My true love gave to me:
+        Nine crocs a-snoozing,
+        Eight dingoes dancing,
+        Seven emus laying,
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the tenth day of Christmas
+        My true love gave to me:
+        Ten wombats washing,
+        Nine crocs a-snoozing,
+        Eight dingoes dancing,
+        Seven emus laying,
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the eleventh day of Christmas
+        My true love gave to me:
+        Eleven lizards leaping,
+        Ten wombats washing,
+        Nine crocs a-snoozing,
+        Eight dingoes dancing,
+        Seven emus laying,
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
+
+        On the twelfth day of Christmas
+        My true love gave to me:
+        Twelve possums playing,
+        Eleven lizards leaping,
+        Ten wombats washing,
+        Nine crocs a-snoozing,
+        Eight dingoes dancing,
+        Seven emus laying,
+        Six sharks a-surfing,
+        Five kangaroos,
+        Four lyrebirds,
+        Three wet galahs,
+        Two snakes on skis,
+        And a kookaburra in a gum tree.
 
         EO_SONG
       )
