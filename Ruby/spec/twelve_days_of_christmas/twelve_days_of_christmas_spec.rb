@@ -5,7 +5,7 @@ require "twelve_days_of_christmas/twelve_days_of_christmas"
 
 module TwelveDaysOfChristmas
   RSpec.describe TwelveDaysOfChristmas do
-    it "returns the first verse of the song" do
+    it "returns the first verse of the English song" do
       expect(described_class.new.verse(1)).to eq(
         "On the first day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -13,7 +13,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the first Aussie verse of the song" do
+    it "returns the first verse of the Aussie song" do
       expect(described_class.new(locale: :en_au).verse(1)).to eq(
         "On the first day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -21,7 +21,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the second verse when asked" do
+    it "returns the second verse of the English song" do
       expect(described_class.new.verse(2)).to eq(
         "On the second day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -30,7 +30,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the third verse when asked" do
+    it "returns the third verse of the English song" do
       expect(described_class.new.verse(3)).to eq(
         "On the third day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -40,7 +40,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the third Aussie verses of the song" do
+    it "returns the third verse of the Aussie song" do
       expect(described_class.new(locale: :en_au).verse(3)).to eq(
         "On the third day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -50,7 +50,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the Twelve Aussie verses of the song" do
+    it "returns the twelves verse of the Aussie song" do
       expect(described_class.new(locale: :en_au).verse(12)).to eq(
         "On the twelfth day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -69,7 +69,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the Twelve English verses of the song" do
+    it "returns the twelves verse of the English song" do
       expect(described_class.new(locale: :en).verse(12)).to eq(
         "On the twelfth day of Christmas\n" \
         "My true love gave to me:\n" \
@@ -88,7 +88,7 @@ module TwelveDaysOfChristmas
       )
     end
 
-    it "returns the whole song" do
+    it "returns the whole classic english song" do
       expect(described_class.new.song).to eq(
         <<~EO_SONG
         On the first day of Christmas
