@@ -1,4 +1,3 @@
-
 # The Twelve Days Of Christmas
 
 Code returns the lyrics of the song: "The Twelve Days of Christmas".
@@ -6,9 +5,10 @@ English and Australian versions.
 
 ## The Song Verses
 
-### English version
+### 🇬🇧 English version
 
 1.
+
 ```
 On the twelfth day of Christmas
 My true love gave to me:
@@ -18,6 +18,7 @@ A Partridge in a Pear Tree.
 ...
 
 12.
+
 ```
 On the twelfth day of Christmas
 My true love gave to me:
@@ -35,9 +36,10 @@ Two turtle doves,
 And a partridge in a pear tree.
 ```
 
-### Australian version
+### 🦘 Australian version
 
 1.
+
 ```
 On the twelfth day of Christmas
 My true love gave to me:
@@ -47,6 +49,7 @@ A kookaburra in a gum tree.
 ...
 
 12.
+
 ```
 On the twelfth day of Christmas
 My true love gave to me:
