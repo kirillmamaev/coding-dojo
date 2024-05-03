@@ -2,83 +2,100 @@
 
 module TwelveDaysOfChristmas
   class TwelveDaysOfChristmas
+    DICTIONARY = {
+      numbers: [
+        nil,
+        nil,
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "Six",
+        "Seven",
+        "Eight",
+        "Nine",
+        "Ten",
+        "Eleven",
+        "Twelve"
+      ],
+      numerals: [
+        nil,
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelfth"
+      ],
+      en: {
+        gifts: [
+          nil,
+          "partridge in a pear tree",
+          "turtle doves",
+          "french hens",
+          "calling birds",
+          "gold rings",
+          "geese-a-laying",
+          "swans-a-swimming",
+          "maids-a-milking",
+          "ladies dancing",
+          "lords-a-leaping",
+          "pipers piping",
+          "drummers drumming"
+        ]
+      },
+      en_au: {
+        gifts: [
+          nil,
+          "kookaburra in a gum tree",
+          "snakes on skis",
+          "wet galahs",
+          "lyrebirds",
+          "kangaroos",
+          "sharks a-surfing",
+          "emus laying",
+          "dingoes dancing",
+          "crocs a-snoozing",
+          "wombats washing",
+          "lizards leaping",
+          "possums playing"
+        ]
+      }
+    }
+
     def initialize(locale: :en)
       @locale = locale
     end
 
-    def song
-      (1..12).map { |number| verse(number) }.join("\n")
-    end
-
     def verse(number)
-      case number
-      when 1
-        generate_first_two_lines_of_verse(number) +
-          "A #{GIFTS[@locale][1]}."
-      when 2
-        generate_first_two_lines_of_verse(number) +
-          "Two #{GIFTS[@locale][2]},\n" \
-          "And a #{GIFTS[@locale][1]}."
-      when 3
-        generate_first_two_lines_of_verse(number) +
-          "Three #{GIFTS[@locale][3]},\n" \
-          "Two #{GIFTS[@locale][2]},\n" \
-          "And a #{GIFTS[@locale][1]}."
-      when 12
-        generate_first_two_lines_of_verse(number) +
-          "Twelve #{GIFTS[@locale][12]},\n" \
-          "Eleven #{GIFTS[@locale][11]},\n" \
-          "Ten #{GIFTS[@locale][10]},\n" \
-          "Nine #{GIFTS[@locale][9]},\n" \
-          "Eight #{GIFTS[@locale][8]},\n" \
-          "Seven #{GIFTS[@locale][7]},\n" \
-          "Six #{GIFTS[@locale][6]},\n" \
-          "Five #{GIFTS[@locale][5]},\n" \
-          "Four #{GIFTS[@locale][4]},\n" \
-          "Three #{GIFTS[@locale][3]},\n" \
-          "Two #{GIFTS[@locale][2]},\n" \
-          "And a #{GIFTS[@locale][1]}."
+      output = generate_starting_verse_lines(number)
+      (number..2).step(-1).each do |i|
+        output += "#{DICTIONARY[:numbers][i]} #{DICTIONARY[@locale][:gifts][i]},\n" \
       end
+      output +=
+        ((number == 1) ? "A " : "And a ") +
+        "#{DICTIONARY[@locale][:gifts][1]}."
     end
 
-    def generate_first_two_lines_of_verse(number)
-      "On the #{NUMERALS[number]} day of Christmas\n" \
+    def song
+      output = ''
+      (1..12).each do |i|
+        output += verse(i) + "\n\n"
+      end
+      output
+    end
+
+    private
+
+    def generate_starting_verse_lines(number)
+      "On the #{DICTIONARY[:numerals][number]} day of Christmas\n" \
       "My true love gave to me:\n" \
     end
-
-    NUMERALS = [nil, "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"]
-
-    GIFTS = {
-      en: [
-        nil,
-        "partridge in a pear tree",
-        "turtle doves",
-        "french hens",
-        "calling birds",
-        "gold rings",
-        "geese-a-laying",
-        "swans-a-swimming",
-        "maids-a-milking",
-        "ladies dancing",
-        "lords-a-leaping",
-        "pipers piping",
-        "drummers drumming"
-      ],
-      en_au: [
-        nil,
-        "kookaburra in a gum tree",
-        "snakes on skis",
-        "wet galahs",
-        "lyrebirds",
-        "kangaroos",
-        "sharks a-surfing",
-        "emus laying",
-        "dingoes dancing",
-        "crocs a-snoozing",
-        "wombats washing",
-        "lizards leaping",
-        "possums playing"
-      ]
-    }
   end
 end
