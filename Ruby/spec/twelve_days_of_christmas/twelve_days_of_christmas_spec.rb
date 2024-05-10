@@ -2,7 +2,6 @@
 
 require "spec_helper"
 require "twelve_days_of_christmas/twelve_days_of_christmas"
-require "twelve_days_of_christmas/dictionary"
 
 module TwelveDaysOfChristmas
   RSpec.describe SongGenerator do
