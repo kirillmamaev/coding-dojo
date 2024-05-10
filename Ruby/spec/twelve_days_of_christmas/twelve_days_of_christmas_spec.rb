@@ -11,54 +11,48 @@ module TwelveDaysOfChristmas
         File.join(
           File.dirname(__FILE__), "twelve_days_of_shristmas_en.txt"
         )
-      ).freeze
+      ).strip.freeze
 
       @twelve_days_of_christmas_song_en_au = File.read(
         File.join(
           File.dirname(__FILE__), "twelve_days_of_christmas_en_au.txt"
         )
-      ).freeze
+      ).strip.freeze
     end
 
     it "returns the first verse of the english song" do
       expect(described_class.new(locale: :en).verse(1)).to eq(
-        @twelve_days_of_christmas_song_en.split("\n\n")[0] +
-        "\n"
+        @twelve_days_of_christmas_song_en.split("\n\n")[0]
       )
     end
 
     it "returns the first verse of the aussie song" do
       expect(described_class.new(locale: :en_au).verse(1)).to eq(
-        @twelve_days_of_christmas_song_en_au.split("\n\n")[0] +
-         "\n"
+        @twelve_days_of_christmas_song_en_au.split("\n\n")[0]
       )
     end
 
     it "returns the second verse of the english song" do
       expect(described_class.new(locale: :en).verse(2)).to eq(
-        @twelve_days_of_christmas_song_en.split("\n\n")[1] +
-        "\n"
+        @twelve_days_of_christmas_song_en.split("\n\n")[1]
       )
     end
 
     it "returns the second verse of the aussie song" do
       expect(described_class.new(locale: :en_au).verse(2)).to eq(
-        @twelve_days_of_christmas_song_en_au.split("\n\n")[1] +
-        "\n"
+        @twelve_days_of_christmas_song_en_au.split("\n\n")[1]
       )
     end
 
     it "returns the third verse of the english song" do
       expect(described_class.new(locale: :en).verse(3)).to eq(
-        @twelve_days_of_christmas_song_en.split("\n\n")[2] +
-        "\n"
+        @twelve_days_of_christmas_song_en.split("\n\n")[2]
       )
     end
 
     it "returns the third verse of the aussie song" do
       expect(described_class.new(locale: :en_au).verse(3)).to eq(
-        @twelve_days_of_christmas_song_en_au.split("\n\n")[2] +
-        "\n"
+        @twelve_days_of_christmas_song_en_au.split("\n\n")[2]
       )
     end
 

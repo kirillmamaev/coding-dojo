@@ -1,19 +1,25 @@
+# frozen_string_literal: true
+
+# Dictionary for the song "The Twelve Days of Christmas" with multiple locales
 DICTIONARY = {
   en: {
-    days_of_christmas_line: [
+    preposition: "on",
+    definite_article: "the",
+    day_of_christmas: "day of Christmas",
+    numerals: [
       nil,
-      "on the first day of Christmas",
-      "on the second day of Christmas",
-      "on the third day of Christmas",
-      "on the fourth day of Christmas",
-      "on the fifth day of Christmas",
-      "on the sixth day of Christmas",
-      "on the seventh day of Christmas",
-      "on the eighth day of Christmas",
-      "on the ninth day of Christmas",
-      "on the tenth day of Christmas",
-      "on the eleventh day of Christmas",
-      "on the twelfth day of Christmas"
+      "first",
+      "second",
+      "third",
+      "fourth",
+      "fifth",
+      "sixth",
+      "seventh",
+      "eighth",
+      "ninth",
+      "tenth",
+      "eleventh",
+      "twelfth"
     ],
     present_giver_line: "my true love gave to me:",
     conjunction: "and",
@@ -34,20 +40,23 @@ DICTIONARY = {
     ]
   },
   en_au: {
-    days_of_christmas_line: [
+    preposition: "on",
+    definite_article: "the",
+    day_of_christmas: "day of Christmas",
+    numerals: [
       nil,
-      "on the first day of Christmas",
-      "on the second day of Christmas",
-      "on the third day of Christmas",
-      "on the fourth day of Christmas",
-      "on the fifth day of Christmas",
-      "on the sixth day of Christmas",
-      "on the seventh day of Christmas",
-      "on the eighth day of Christmas",
-      "on the ninth day of Christmas",
-      "on the tenth day of Christmas",
-      "on the eleventh day of Christmas",
-      "on the twelfth day of Christmas"
+      "first",
+      "second",
+      "third",
+      "fourth",
+      "fifth",
+      "sixth",
+      "seventh",
+      "eighth",
+      "ninth",
+      "tenth",
+      "eleventh",
+      "twelfth"
     ],
     present_giver_line: "my true love gave to me:",
     conjunction: "and",
