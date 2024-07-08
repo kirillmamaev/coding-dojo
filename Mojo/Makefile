@@ -6,6 +6,11 @@ install:
 	python3 -m venv mojo-venv && source mojo-venv/bin/activate
 	modular install mojo
 
+.PHONY: update
+update:
+	brew update && brew upgrade modular
+	modular update mojo
+
 .PHONY: build-hello
 build-hello:
 	mkdir -p build
