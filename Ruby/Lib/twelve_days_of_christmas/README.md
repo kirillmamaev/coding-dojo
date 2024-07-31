@@ -10,7 +10,7 @@ English and Australian versions.
 1.
 
 ```
-On the twelfth day of Christmas
+On the first day of Christmas
 My true love gave to me:
 A Partridge in a Pear Tree.
 ```
@@ -41,7 +41,7 @@ And a partridge in a pear tree.
 1.
 
 ```
-On the twelfth day of Christmas
+On the first day of Christmas
 My true love gave to me:
 A kookaburra in a gum tree.
 ```
