@@ -1,11 +1,4 @@
 export class Rover {
-  private ROVER_MOVES = {
-    "N": {
-      "F": [0, 1],
-      "B": [0,-1]
-    }
-  } as const;
-
   constructor(private _x: number, private _y: number, private _facing: string) {
   }
 
