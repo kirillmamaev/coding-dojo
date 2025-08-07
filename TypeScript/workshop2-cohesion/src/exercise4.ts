@@ -1,4 +1,8 @@
-class GameCharacter {
+function calculateDamage(baseAttack: number): number {
+  return baseAttack;
+}
+
+class GameCharacter4 {
   name: string;
   health: number;
   attackPower: number;
@@ -19,7 +23,7 @@ class GameCharacter {
   }
 
   getAttackDamage(): number {
-    return this.attackPower;
+    return calculateDamage(this.attackPower);
   }
 
   displayHealth(): void {
@@ -31,11 +35,11 @@ class GameCharacter {
   }
 }
 
-class Battle {
-  private hero: GameCharacter;
-  private monster: GameCharacter;
+class Battle4 {
+  private hero: GameCharacter4;
+  private monster: GameCharacter4;
 
-  constructor(hero: GameCharacter, monster: GameCharacter) {
+  constructor(hero: GameCharacter4, monster: GameCharacter4) {
     this.hero = hero;
     this.monster = monster;
   }
@@ -73,7 +77,7 @@ class Battle {
     }
   }
 
-  private performAttack(attacker: GameCharacter, target: GameCharacter, attackerType: string): void {
+  private performAttack(attacker: GameCharacter4, target: GameCharacter4, attackerType: string): void {
     console.log(`${attacker.name} attacks!`);
     const damage = attacker.getAttackDamage();
     target.takeDamage(damage);
@@ -92,11 +96,11 @@ class Battle {
   }
 }
 
-function exercise3(): void {
-  const hero = new GameCharacter('Hero', 100, 15);
-  const monster = new GameCharacter('Monster', 80, 10);
-  const battle = new Battle(hero, monster);
+function exercise4(): void {
+  const hero = new GameCharacter4('Hero', 100, 15);
+  const monster = new GameCharacter4('Monster', 80, 10);
+  const battle = new Battle4(hero, monster);
   battle.start();
 }
 
-exercise3();
+exercise4();

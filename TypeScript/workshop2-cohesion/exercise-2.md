@@ -13,6 +13,7 @@ Refactor your "big ball of mud" code by grouping **data with the operations that
 1. **Create a Character class/structure** that contains:
    - Properties: `name`, `health`, `attack_power`
    - Methods: `attack()`, `take_damage()`, `is_alive()`
+   - (`attack()` takes a Character as input)
 
 2. **Move related logic together**:
    - Health management stays with the Character

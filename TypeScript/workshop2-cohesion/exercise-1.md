@@ -58,7 +58,7 @@ Hero wins!
 Game Over.
 ```
 
-**Time limit: 30 minutes** ⏰
+**Time limit: 40 minutes** ⏰
 **Run your code when you're done to make sure it works!**
 
 ### Tips
